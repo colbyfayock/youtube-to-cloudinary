@@ -4,7 +4,11 @@ const jwt = require('jsonwebtoken');
 
 const { downloadYouTubeVideoByID } = require('../lib/youtube');
 
-const tmpDir = path.resolve(path.join(__dirname, 'tmp'));
+let tmpDir = path.resolve('/tmp');
+
+if ( process.env.DEVELOPMENT_MODE === 'true' ) {
+  tmpDir = path.resolve(path.join(__dirname, 'tmp'))
+}
 
 exports.handler = async (event, context) => {
   let config;

@@ -9,7 +9,8 @@ const fetch = require('node-fetch');
     api_secret: process.env.CLOUDINARY_API_SECRET
   }, process.env.APP_SECRET);
 
-  const response = await fetch('http://localhost:8888/.netlify/functions/youtube-to-cloudinary?videoId=bRth3NXVlLA', {
+  // const response = await fetch('http://localhost:8888/.netlify/functions/youtube-to-cloudinary?videoId=bRth3NXVlLA', {
+  const response = await fetch('https://youtube-to-cloudinary.netlify.app/.netlify/functions/youtube-to-cloudinary?videoId=bRth3NXVlLA', {
     headers: {
       Authorization: token
     }
